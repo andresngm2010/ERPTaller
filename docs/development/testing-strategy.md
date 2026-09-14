@@ -15,15 +15,12 @@ and system boundaries.
 Every bug fix should normally include a regression test. Tests must be deterministic,
 isolated, and readable.
 
-## CI target state
+## CI validation
 
-Automated CI validation is required before merge once the corresponding tooling
-exists. CI must run applicable tests, linting, type checks, migration validation,
-and build/container checks.
+Automated CI validation is required before merge. CI runs backend tests, Ruff,
+mypy, frontend Vitest tests, ESLint, TypeScript checks, application builds, and
+container/Compose validation.
 
-## Current Bootstrap 1 state
-
-Bootstrap 2 will install the application runtime, validation tooling, commands, and
-CI workflow. Until then, contributors must perform applicable validation manually
-and report exactly which checks passed, were skipped, or were unavailable. Coverage
-policy and test-data strategy remain TBD until the application stack is installed.
+The exact local commands are documented in the root [README](../../README.md).
+Coverage policy and product test-data strategy remain TBD until real vertical
+slices justify them.

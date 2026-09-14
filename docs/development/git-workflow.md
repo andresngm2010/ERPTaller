@@ -13,10 +13,9 @@ Use this flow for normal work:
 4. Add tests and run all applicable validation locally.
 5. Open a focused pull request linked to the issue, disclose migrations, contracts,
    documentation, architectural impact, and any unrun checks.
-6. Address review and, once installed, automated CI feedback, then merge according
-   to repository protection settings (TBD). During Bootstrap 1, perform applicable
-   validation manually and report it accurately; Bootstrap 2 will install the
-   runtime tooling and CI workflow required before application changes are merged.
+6. Address review and automated CI feedback, then merge according to repository
+   protection settings (TBD). Perform applicable validation locally and report it
+   accurately before requesting review.
 
 Keep commits reviewable and do not mix unrelated cleanup into feature changes.
 Never commit secrets. Agents must not commit or push unless explicitly instructed.

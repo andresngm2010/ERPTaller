@@ -1,8 +1,8 @@
 # Architecture Overview
 
-ERPTaller is a container-first modular monolith in a monorepo. The planned web
-application is Next.js with TypeScript, the planned API is FastAPI with Python,
-and PostgreSQL is the initial database through SQLAlchemy and Alembic. The initial
+ERPTaller is a container-first modular monolith in a monorepo. The web application
+uses Next.js with TypeScript, the API uses FastAPI with Python, and PostgreSQL is
+the initial database through SQLAlchemy and Alembic. The initial
 external interface is REST documented with OpenAPI.
 
 The modular monolith keeps deployment and operations simple while preserving

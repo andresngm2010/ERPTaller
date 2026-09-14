@@ -11,6 +11,6 @@
 - Follow existing local patterns before adding a new one.
 - Keep code, tests, contracts, migrations, and documentation synchronized.
 
-Language- and framework-specific conventions remain TBD until their stacks are
-installed. Future subtree `AGENTS.md` files may define them without contradicting
-the repository constitution.
+Language- and framework-specific conventions live in the scoped `AGENTS.md` files
+under `apps/api` and `apps/web`; they must not contradict the repository
+constitution.

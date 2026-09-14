@@ -1,27 +1,74 @@
 # ERPTaller
 
-Collaborative automotive workshop ERP, currently in repository-bootstrap phase.
+ERPTaller is a container-first automotive workshop ERP organized as a modular
+monolith in a monorepo. Bootstrap 2 provides the executable application shell; it
+does not contain ERP product functionality.
 
-The system is planned as a container-first modular monolith in a monorepo:
-
-- `apps/web`: Next.js and TypeScript frontend (planned)
-- `apps/api`: FastAPI and Python backend (planned)
-- `packages/contracts`: shared, technology-neutral API contracts where justified
-- `infra`: portable local/deployment infrastructure definitions
+- `apps/web`: Next.js 16 and strict TypeScript frontend
+- `apps/api`: FastAPI, SQLAlchemy 2, and Alembic backend
+- `packages/contracts`: placeholder for justified, stable shared contracts
+- `infra`: infrastructure-specific agent guidance
 - `docs`: architecture, domain, workflow, and decision records
 
-No product functionality or application stack has been installed yet. Exact setup
-and validation commands remain TBD until the next bootstrap phase.
+## Requirements
 
-## Start here
+The primary development path requires Git and Docker with Docker Compose. For
+non-container development, install Python 3.14 with `uv`, and Node.js 24 with
+`pnpm`.
 
-1. Read [AGENTS.md](AGENTS.md) for repository-wide contribution rules.
-2. Read [docs/architecture/overview.md](docs/architecture/overview.md) and the
-   relevant [ADRs](docs/adr/README.md) before changing architecture.
-3. Read [docs/domain/domain-map.md](docs/domain/domain-map.md) and the
-   [glossary](docs/domain/glossary.md) before implementing a domain feature.
-4. Follow [docs/development/agent-workflow.md](docs/development/agent-workflow.md)
-   and the [Definition of Done](docs/development/definition-of-done.md).
+## Quick start
 
-Git-tracked documentation and code are the technical source of truth. Chat history
-and agent memory are not.
+```text
+git clone <repository-url>
+cd ERPTaller
+docker compose up --build
+```
+
+The checked-in Compose defaults are safe for local development. Copy
+`.env.example` to `.env` only if you need to override them.
+
+- Frontend: <http://localhost:3000>
+- Backend: <http://localhost:8000>
+- FastAPI docs: <http://localhost:8000/docs>
+- Health endpoint: <http://localhost:8000/health>
+
+Stop the stack with `docker compose down`. To intentionally delete all local
+database data, stop it with `docker compose down --volumes`.
+
+## Local validation
+
+Backend:
+
+```text
+cd apps/api
+uv sync --frozen
+uv run ruff check .
+uv run ruff format --check .
+uv run mypy .
+uv run pytest
+```
+
+Frontend:
+
+```text
+cd apps/web
+pnpm install --frozen-lockfile
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+```
+
+Container configuration and builds:
+
+```text
+docker compose config
+docker compose build
+```
+
+## Architecture and contribution guidance
+
+Read [AGENTS.md](AGENTS.md), the [architecture overview](docs/architecture/overview.md),
+the [ADRs](docs/adr/README.md), the [domain map](docs/domain/domain-map.md), and the
+[Definition of Done](docs/development/definition-of-done.md) before making changes.
+Git-tracked documentation and code are the technical source of truth.
