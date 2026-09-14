@@ -1,0 +1,51 @@
+name: Bug
+description: Report reproducible incorrect behavior
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is wrong and what is the impact?
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain / module
+      placeholder: Inventory
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |-
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and environment
+      description: Include relevant logs, screenshots, versions, and frequency without secrets.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and regression notes
+      description: Known affected cases, suspected cause, and regression-test ideas.
