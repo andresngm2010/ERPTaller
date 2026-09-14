@@ -1,0 +1,62 @@
+name: Feature
+description: Propose a focused product capability or vertical slice
+title: "[Feature]: "
+labels:
+  - feature
+body:
+  - type: markdown
+    attributes:
+      value: Complete unknown details with "TBD" rather than inventing rules.
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What outcome should this work achieve?
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain / module
+      description: Which domain owns this capability?
+      placeholder: Workshop
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: User story or business context
+      description: Who needs this and why?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Provide observable, testable outcomes.
+      placeholder: |-
+        - [ ] Given ..., when ..., then ...
+    validations:
+      required: true
+  - type: textarea
+    id: rules
+    attributes:
+      label: Business rules
+      description: List confirmed rules and mark unknowns TBD.
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Issues, modules, decisions, or external constraints.
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: Explicitly exclude adjacent work.
+    validations:
+      required: true
+  - type: textarea
+    id: technical_notes
+    attributes:
+      label: Technical notes (if known)
+      description: Known contracts, migrations, risks, or architectural considerations.

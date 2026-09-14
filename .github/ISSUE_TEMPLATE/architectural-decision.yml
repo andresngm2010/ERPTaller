@@ -1,0 +1,39 @@
+name: Architectural decision
+description: Propose or record a consequential technical decision
+title: "[ADR]: "
+labels:
+  - architecture
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What forces, constraints, and problem require a decision?
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options considered
+      description: List realistic options and their tradeoffs.
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Proposed decision
+      description: State the proposal without fabricating undecided requirements.
+    validations:
+      required: true
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Consequences
+      description: Include benefits, costs, risks, and follow-up work.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Affected modules and documentation
+      description: Identify boundaries, contracts, ADRs, and docs that would change.
