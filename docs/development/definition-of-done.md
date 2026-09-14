@@ -20,7 +20,6 @@ reviewed exception exists:
 - The pull request identifies affected modules, validation performed, risks,
   follow-ups, and any architectural impact.
 
-During Bootstrap 1, exact commands and the CI workflow are not yet installed.
-Bootstrap 2 will add the runtime tooling and automated validation required before
-application changes are merged. Until then, contributors must perform applicable
-checks manually and report which were available, run, skipped, or unavailable.
+The exact backend, frontend, and container validation commands are documented in
+the root [README](../../README.md) and executed by CI. Contributors must report
+which applicable checks passed, failed, or could not be run.

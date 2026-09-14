@@ -28,3 +28,4 @@ the old one. Initial accepted decisions:
 - [0005: REST and OpenAPI](0005-rest-openapi.md)
 - [0006: Module data ownership](0006-module-data-ownership.md)
 - [0007: Initial application frameworks](0007-initial-application-frameworks.md)
+- [0008: Runtime and development toolchain](0008-runtime-development-toolchain.md)
