@@ -19,7 +19,8 @@ isolated, and readable.
 
 Automated CI validation is required before merge. CI runs backend tests, Ruff,
 mypy, frontend Vitest tests, ESLint, TypeScript checks, application builds, and
-container/Compose validation.
+container/Compose validation. It also runs the backend and frontend static
+module-boundary architecture checks.
 
 The exact local commands are documented in the root [README](../../README.md).
 Coverage policy and product test-data strategy remain TBD until real vertical

@@ -23,6 +23,9 @@ specific rules for its subtree but must not contradict accepted root decisions.
   contracts, or internal events. Follow the
   [dependency rules](docs/architecture/dependency-rules.md) and
   [module boundaries](docs/architecture/module-boundaries.md).
+- Use identifiers from the canonical
+  [module registry](docs/architecture/module-registry.json) and the public code
+  surfaces defined by [ADR 0009](docs/adr/0009-module-code-boundaries.md).
 - Avoid shared abstractions until a demonstrated cross-module need exists.
 - Do not introduce microservices, Kubernetes, a cloud-provider dependency, or
   unapproved supporting infrastructure.
@@ -43,6 +46,8 @@ specific rules for its subtree but must not contradict accepted root decisions.
 - Add tests at the appropriate level and run all applicable tests, linting, type
   checks, migration checks, and container/build checks. If a command is not yet
   available, state that explicitly rather than claiming it passed.
+- Run applicable architecture checks. Do not weaken, exclude, or bypass a failing
+  boundary rule without an accepted architectural decision.
 - Meet the repository [Definition of Done](docs/development/definition-of-done.md).
 - Use short-lived branches, focused commits, and pull requests linked to an issue.
   Do not commit generated artifacts, secrets, credentials, or unrelated changes.
