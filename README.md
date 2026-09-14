@@ -1,8 +1,8 @@
 # ERPTaller
 
 ERPTaller is a container-first automotive workshop ERP organized as a modular
-monolith in a monorepo. Bootstrap 2 provides the executable application shell; it
-does not contain ERP product functionality.
+monolith in a monorepo. Bootstrap 3 provides the executable application shell and
+static module-boundary guardrails; it does not contain ERP product functionality.
 
 - `apps/web`: Next.js 16 and strict TypeScript frontend
 - `apps/api`: FastAPI, SQLAlchemy 2, and Alembic backend
@@ -46,6 +46,7 @@ uv run ruff check .
 uv run ruff format --check .
 uv run mypy .
 uv run pytest
+uv run python ../../scripts/check_backend_architecture.py
 ```
 
 Frontend:
@@ -56,6 +57,7 @@ pnpm install --frozen-lockfile
 pnpm lint
 pnpm typecheck
 pnpm test
+pnpm architecture:check
 pnpm build
 ```
 

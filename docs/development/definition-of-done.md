@@ -8,6 +8,7 @@ reviewed exception exists:
 - Appropriate tests were added or updated and pass.
 - Linting and formatting checks pass.
 - Static type checks pass.
+- Applicable backend and frontend module-boundary architecture checks pass.
 - Persistence changes include reviewed Alembic migrations owned by the correct
   module, with applicable migration validation.
 - REST/OpenAPI or shared contract changes update providers, consumers, compatibility

@@ -44,6 +44,7 @@ jobs:
       - run: uv run ruff format --check .
       - run: uv run mypy .
       - run: uv run pytest
+      - run: uv run python ../../scripts/check_backend_architecture.py
       - run: uv run alembic heads
       - run: uv run alembic upgrade head
       - run: uv run alembic current
@@ -69,6 +70,7 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test
+      - run: pnpm architecture:check
       - run: pnpm build
 
   containers:

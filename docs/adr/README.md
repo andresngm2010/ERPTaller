@@ -29,3 +29,4 @@ the old one. Initial accepted decisions:
 - [0006: Module data ownership](0006-module-data-ownership.md)
 - [0007: Initial application frameworks](0007-initial-application-frameworks.md)
 - [0008: Runtime and development toolchain](0008-runtime-development-toolchain.md)
+- [0009: Module code boundaries](0009-module-code-boundaries.md)
