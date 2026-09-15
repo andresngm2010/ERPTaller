@@ -1,0 +1,175 @@
+.customerLayout {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.8fr) minmax(20rem, 1.2fr);
+  gap: 1rem;
+}
+
+.customerContent {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.panel {
+  padding: 1.5rem;
+  border: 1px solid #dce2dc;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.75rem 2.5rem rgb(30 54 40 / 7%);
+}
+
+.panelHeader,
+.detailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel h2,
+.panel h3 {
+  margin: 0;
+}
+
+.customerList {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.customerList button {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e2e7e2;
+  border-radius: 0.75rem;
+  color: inherit;
+  background: #fafbf9;
+  text-align: left;
+}
+
+.customerList button:hover,
+.customerList button[aria-current="true"] {
+  border-color: #2f8056;
+  background: #edf7f1;
+}
+
+.customerList strong,
+.customerList span {
+  display: block;
+}
+
+.customerList span {
+  margin-top: 0.15rem;
+  color: #68756d;
+  font-size: 0.88rem;
+}
+
+.customerForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.customerForm label {
+  display: grid;
+  gap: 0.35rem;
+  color: #465149;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.customerForm .fullWidth,
+.formActions {
+  grid-column: 1 / -1;
+}
+
+.customerForm input,
+.customerForm select,
+.customerForm textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #cfd7d0;
+  border-radius: 0.55rem;
+  color: #17211b;
+  background: #fff;
+}
+
+.customerForm input:focus,
+.customerForm select:focus,
+.customerForm textarea:focus {
+  outline: 3px solid rgb(47 128 86 / 18%);
+  border-color: #2f8056;
+}
+
+.button {
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 0.55rem;
+  color: #fff;
+  background: #176b42;
+  font-weight: 700;
+}
+
+.button.secondary {
+  border: 1px solid #cfd7d0;
+  color: #24352b;
+  background: #fff;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.formActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.message {
+  padding: 0.75rem;
+  border-radius: 0.55rem;
+  background: #f2f4f1;
+}
+
+.message.error {
+  color: #8a201e;
+  background: #fff0ef;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.details div {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #edf0ed;
+}
+
+.details dt {
+  color: #68756d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.details dd {
+  margin: 0.25rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .customerLayout,
+  .customerForm,
+  .details {
+    grid-template-columns: 1fr;
+  }
+}
