@@ -5,6 +5,9 @@ from sqlalchemy import engine_from_config, pool
 from alembic import context
 from erp_taller_api.config import Settings
 from erp_taller_api.database import metadata
+from erp_taller_api.modules.customers.public import register_customer_models
+
+register_customer_models()
 
 config = context.config
 config.set_main_option("sqlalchemy.url", Settings.from_environment().database_url)

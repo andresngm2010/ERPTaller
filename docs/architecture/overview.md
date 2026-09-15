@@ -13,11 +13,16 @@ and documentation rather than creating permanent frontend/backend silos.
 
 ## Runtime shape
 
-The web app calls the API through documented REST contracts. The API hosts domain
-modules in one deployable application. A single PostgreSQL database is acceptable,
-but tables and migrations have a logical owning module. Docker Compose will be the
-initial local orchestrator. Deployment must remain portable; no cloud provider is
-selected and Kubernetes is out of scope.
+As established by [ADR 0010](../adr/0010-same-origin-web-api-boundary.md), browser
+code calls same-origin Next.js `/api/*` route handlers. Those thin adapters use the
+server-side `API_URL` setting to proxy the request method and body to the documented
+FastAPI REST contract and propagate its response status and body. Domain behavior
+does not live in the proxy.
+
+The API hosts domain modules in one deployable application. A single PostgreSQL
+database is acceptable, but tables and migrations have a logical owning module.
+Docker Compose will be the initial local orchestrator. Deployment must remain
+portable; no cloud provider is selected and Kubernetes is out of scope.
 
 ## Collaboration between modules
 

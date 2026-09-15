@@ -44,6 +44,8 @@ services:
   web:
     build:
       context: ./apps/web
+    environment:
+      API_URL: http://api:8000
     ports:
       - "127.0.0.1:3000:3000"
     depends_on:
